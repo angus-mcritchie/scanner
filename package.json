@@ -1,0 +1,24 @@
+{
+  "name": "@gooby/scanner",
+  "version": "1.0.0",
+  "description": "Detect barcode scanner scans and add custom actions for burst scans",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angus-mcritchie/scanner.git"
+  },
+  "keywords": [
+    "barcode",
+    "scanner",
+    "scan"
+  ],
+  "author": "Angus McRitchie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angus-mcritchie/scanner/issues"
+  },
+  "homepage": "https://github.com/angus-mcritchie/scanner#readme"
+}

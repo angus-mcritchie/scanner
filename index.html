@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scanner</title>
+    <script src="./test.js" type="module" defer></script>
+    <style>
+        body {
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: sans-serif;
+        }
+
+        #log-container {
+            gap: 1rem;
+            display: flex;
+        }
+
+        #log-container>* {
+            flex-basis: 100%;
+        }
+
+        .log {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .scan {
+            background-color: antiquewhite;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Try scanning</h1>
+    <p>Scan or type and press enter. Scans are also logged in the console.</p>
+
+    <div id="log-container">
+        <div>
+            <h3>1️⃣ Single Scans</h3>
+            <pre class="log" id="single-scan-log"></pre>
+        </div>
+        <div>
+            <h3>3️⃣ Triple Scans</h3>
+            <pre class="log" id="triple-scan-log"></pre>
+        </div>
+    </div>
+</body>
+
+</html>
