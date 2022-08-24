@@ -44,7 +44,7 @@ export default class Scanner {
 		this.blurButtonIfFocused();
 
 		// Don't add to scanner input if we're typing into an ignored field (like an input)
-		if (target.closest(Scanner.ignoreSelector)) {
+		if (target.matches(Scanner.ignoreSelector) || target.closest(Scanner.ignoreSelector)) {
 			return this.input = '';
 		}
 
