@@ -27,7 +27,7 @@ export default class Scanner {
 	}
 
 	listen(context = document.body) {
-		context.addEventListener('keyup', this.handleKeyUp.bind(this));
+		context.addEventListener('keypress', this.handleKeyUp.bind(this));
 		return this;
 	}
 
