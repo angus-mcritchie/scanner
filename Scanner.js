@@ -32,7 +32,7 @@ export default class Scanner {
 	}
 
 	blurButtonIfFocused() {
-		document.activeElement.tagName === 'BUTTON' && document.activeElement.dispatchEvent(new Event('blur'));
+		/BUTTON|A/i.test(document.activeElement.tagName) && document.activeElement.blur();
 		return this;
 	}
 
