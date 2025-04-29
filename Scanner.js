@@ -19,10 +19,16 @@ export default class Scanner {
 		this.input = '';
 		this.enabled = true;
 		this.listeners = listener ? [listener] : [];
+		this.emptyScanListeners = [];
 	}
 
 	addListener(listener) {
 		this.listeners.push(listener);
+		return this;
+	}
+
+	onEmptyScan(callback) {
+		this.emptyScanListeners.push(callback);
 		return this;
 	}
 
@@ -45,16 +51,19 @@ export default class Scanner {
 
 		// Don't add to scanner input if we're typing into an ignored field (like an input)
 		if (target.matches(Scanner.ignoreSelector) || target.closest(Scanner.ignoreSelector)) {
-			return this.input = '';
+			this.input = '';
+			return;
 		}
 
 		// add the key to the scanner input to build the barcode
 		if (key !== Scanner.finishKey) {
-			return this.input += key;
+			this.input += key;
+			return;
 		}
 
 		// don't do anything if the scanner input is empty
 		if (this.input === '') {
+			this.handleEmptyScan();
 			return;
 		}
 
@@ -62,6 +71,10 @@ export default class Scanner {
 
 		// reset the scanner input, ready for next time
 		this.input = '';
+	}
+
+	handleEmptyScan() {
+		this.emptyScanListeners.forEach(callback => callback());
 	}
 
 	handleScan() {
