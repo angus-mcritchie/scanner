@@ -1,6 +1,6 @@
 {
   "name": "@gooby/scanner",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Detect barcode scanner scans and add custom actions for burst scans",
   "main": "index.js",
   "scripts": {
