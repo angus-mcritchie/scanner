@@ -41,6 +41,16 @@
     <h1>Try scanning</h1>
     <p>Scan or type and press enter. Scans are also logged in the console.</p>
 
+    <h3>Fields the scanner ignores</h3>
+    <p>Typing in these should log nothing, and Enter should not fire a scan.</p>
+    <p>
+        <input type="text" placeholder="input">
+        <select><option>select</option></select>
+    </p>
+    <p><textarea rows="2" placeholder="textarea"></textarea></p>
+    <p><span contenteditable="true" style="display:block;border:1px solid #ccc;padding:.5rem;">contenteditable</span></p>
+    <p><span class="js-disable-barcode-scan" contenteditable="true" style="display:block;border:1px solid #ccc;padding:.5rem;">opted out by class</span></p>
+
     <div id="log-container">
         <div>
             <h3>1️⃣ Single Scans</h3>
