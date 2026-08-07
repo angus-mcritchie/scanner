@@ -3,7 +3,14 @@ import ScanType from './ScanType.js';
 
 export default class Scanner {
 
-	static ignoreSelector = 'input, js-disable-barcode-scan';
+	// Fields a person types into, which the scanner must keep its hands off.
+	//
+	// `js-disable-barcode-scan` was missing its dot, so it read as a type selector
+	// for an element nobody has and the list was really just `input`. Every opt-out
+	// using that class happened to be an <input> too, so it went unnoticed until a
+	// <textarea> tried to use it: every character typed was appended to the barcode
+	// buffer, and the Enter ending a line fired the lot as a scan.
+	static ignoreSelector = 'input, textarea, select, [contenteditable="true"], .js-disable-barcode-scan';
 	static ignoreKeys = ['Shift', 'Unidentified'];
 	static finishKey = 'Enter';
 
